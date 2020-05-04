@@ -1,0 +1,32 @@
+{
+  "name": "svelton",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "dev": "webpack-dev-server --content-base public"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "sass": "^1.26.5",
+    "serve": "^11.0.0",
+    "style-loader": "^1.2.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "2.13.3",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.2.1",
+    "filepond": "^4.13.1",
+    "node-sass": "^4.13.1",
+    "notifyjs": "^3.0.0",
+    "nouislider": "^14.2.0",
+    "sass-loader": "^8.0.2",
+    "svelte-preprocess": "^3.7.1",
+    "svelte-preprocess-sass": "^0.2.0"
+  }
+}
