@@ -1,15 +1,20 @@
 {
   "name": "svelton",
-  "version": "1.0.2",
-  "main":"src/components",
-  "description":"",
+  "version": "1.0.3",
+  "main": "src/components",
+  "description": "",
   "author": "farhad azarbarzinniaz",
   "license": "MIT",
-  "keywords":["sveltejs", "svelte", "ui", "library" ],
+  "keywords": [
+    "sveltejs",
+    "svelte",
+    "ui",
+    "library"
+  ],
   "homepage": "https://github.com/farhadniaz/svelton#readme",
-  "bugs":{
-    "url" : "https://github.com/farhadniaz/svelton/issues", 
-    "email" : "farhad00niaz@gmail.com"
+  "bugs": {
+    "url": "https://github.com/farhadniaz/svelton/issues",
+    "email": "farhad00niaz@gmail.com"
   },
   "repository": {
     "type": "git",
