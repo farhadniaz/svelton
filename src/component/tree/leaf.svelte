@@ -1,5 +1,6 @@
 <script>
-        import FileSVG from '../../icons-svg/outlined/file.svg';
+		
+	export let icon;
 	export let name;
 	$: type = name.slice(name.lastIndexOf('.') + 1);
 </script>
@@ -13,4 +14,4 @@
 </style>
 
 <span 
->{@html FileSVG} {name}</span>
+>{@html icon} {name}</span>

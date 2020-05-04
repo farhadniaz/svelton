@@ -1,9 +1,11 @@
 <script>
-    import File from './file.svelte';
-    import FolderSVG from '../../icons-svg/outlined/folder.svg';
+    import Leaf from './leaf.svelte';
+
+    export let icon;
+    export let leafIcon;
     export let expanded = false;
     export let name;
-    export let files;
+    export let items;
 
     function toggle() {
         expanded = !expanded;
@@ -19,8 +21,6 @@
         cursor: pointer;
     }
 
-    .expanded {}
-
     ul {
         padding: 0.2em 0 0 0.5em;
         margin: 0 0 0 0.5em;
@@ -33,16 +33,19 @@
     }
 </style>
 
-<span class:expanded on:click={toggle}>{@html FolderSVG} {name}</span>
+<span class:expanded on:click={toggle}>{@html icon} {name}</span>
 
 {#if expanded}
 	<ul>
-		{#each files as file}
+		{#each items as item}
 			<li>
-		{#if file.type === 'folder'}
-	<svelte:self {...file}/>
+		{#if item.type === 'root'}
+    <svelte:self {...item}
+    leafIcon={leafIcon}
+    icon={icon}
+    />
 {:else}
-	<File {...file}/>
+	<Leaf {...item} icon={leafIcon}/>
 {/if}
 			</li>
 		{/each}

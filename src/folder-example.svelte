@@ -1,30 +1,31 @@
 <script>
-	import Folder from './component/folder-list';
-
+	import Tree from './component/tree';
+import FolderSVG from './icons-svg/outlined/folder.svg';
+import FileSVG from './icons-svg/outlined/file.svg';
 	let root = [
 		{
-			type: 'folder',
+			type: 'root',
 			name: 'Important work stuff',
-			files: [
+			items: [
 				{ type: 'file', name: 'quarterly-results.xlsx' }
 			]
 		},
 		{
-			type: 'folder',
+			type: 'root',
 			name: 'Animal GIFs',
-			files: [
+			items: [
 				{
-					type: 'folder',
+					type: 'root',
 					name: 'Dogs',
-					files: [
+					items: [
 						{ type: 'file', name: 'treadmill.gif' },
 						{ type: 'file', name: 'rope-jumping.gif' }
 					]
 				},
 				{
-					type: 'folder',
+					type: 'root',
 					name: 'Goats',
-					files: [
+					items: [
 						{ type: 'file', name: 'parkour.gif' },
 						{ type: 'file', name: 'rampage.gif' }
 					]
@@ -38,4 +39,7 @@
 	];
 </script>
 
-<Folder name="Home" files={root} expanded/>
+<Tree name="Home" items={root} expanded
+icon={FolderSVG}
+leafIcon={FileSVG}
+/>
