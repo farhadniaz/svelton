@@ -1,6 +1,10 @@
 {
   "name": "svelton",
   "version": "1.0.1-0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farhadniaz/svelton.git"
+  },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public"
