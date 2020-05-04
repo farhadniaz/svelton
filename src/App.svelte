@@ -2,21 +2,26 @@
 	import Header from './header.svelte';
 
 	// components
-	import Fileupload from "./component/fileupload.svelte"
-	import Button from "./component/button.svelte"
-	import Breadcrumb from "./component/breadcrumb.svelte"
-	import Alert from "./component/alert.svelte"
-	import Dropdown from "./component/dropdown.svelte"
-	import Switch from "./component/switch.svelte"
-	import Rate from "./component/rate.svelte"
-	import Pagination from "./component/pagination.svelte"
-	import Tag from "./component/tag.svelte"
-	import Checkbox from "./component/checkbox.svelte"
-	import Radio from "./component/radio.svelte"
-	import RangeSliderExmple from './range-slider-exmple.svelte'
-	import DrawerExample from './drawer-example.svelte'
-	import FolderExample from './folder-example.svelte';
-	import Modal from "./component/modal.svelte"
+
+	import {
+		Fileupload,
+		Button,
+		Breadcrumb,
+		Alert,
+		Dropdown,
+		Switch,
+		Rate,
+		Pagination,
+		Checkbox,
+		Tag,
+		Radio,
+		Modal,
+	} from "./components";
+
+	import RangeSliderExmple from './example/range-slider-exmple.svelte'
+	import DrawerExample from './example/drawer-example.svelte'
+	import FolderExample from './example/folder-example.svelte';
+
 
 	let modalVisible = false;
 	let group = null;
