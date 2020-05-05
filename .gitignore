@@ -1,7 +1,5 @@
 .DS_Store
 node_modules
-src/icons-svg/*
-public/bundle.*
 package-lock.json
 yarn.lock
 *.log
