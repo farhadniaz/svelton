@@ -14,6 +14,7 @@ export { default as SwitchExample } from './switch-example.svelte';
 export { default as TagExample } from './tag-example.svelte';
 export { default as TreeExample } from './tree-example/index.svelte';
 export { default as ButtonExample } from './button-example.svelte';
+export { default as UnderDevelomentExample } from './under-develoment-example.svelte';
 
 export const routes = [
     {
@@ -76,6 +77,34 @@ export const routes = [
     {
         href: "/button",
         title: "button"
+    },
+    {
+        href: "/table",
+        title: "table"
+    },
+    {
+        href: "/grid",
+        title: "grid"
+    },
+    {
+        href: "/steps",
+        title: "steps"
+    },
+    {
+        href: "/slider",
+        title: "slider"
+    },
+    {
+        href: "/time-picker",
+        title: "time picker"
+    },
+    {
+        href: "/bage",
+        title: "bage"
+    },
+    {
+        href: "/comment",
+        title: "comment"
     }
 ]
 

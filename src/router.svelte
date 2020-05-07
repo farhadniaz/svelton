@@ -20,6 +20,7 @@
         TagExample,
         TreeExample,
         ButtonExample
+        , UnderDevelomentExample
     } from './example';
 
 
@@ -46,6 +47,15 @@
     page('/tag', () => (current = TagExample));
     page('/tree', () => (current = TreeExample));
     page('/button', () => (current = ButtonExample));
+
+    page('/table', () => (current = UnderDevelomentExample));
+    page('/grid', () => (current = UnderDevelomentExample));
+    page('/steps', () => (current = UnderDevelomentExample));
+    page('/slider', () => (current = UnderDevelomentExample));
+    page('/time-picker', () => (current = UnderDevelomentExample));
+    page('/bage', () => (current = UnderDevelomentExample));
+    page('/comment', () => (current = UnderDevelomentExample));
+
 
     // activate router
     page.start();
