@@ -1,13 +1,18 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
     import StarSvg from './icons-svg/filled/star.svg';
     export let count = 5;
     export let color = "blue"
     export let value;
     let shadow = 0;
-    const itemClicked = (index) => {
-        debugger;
-        svalue = index + 1
+    const change = (index) => {
+        value = index
+        dispatch('change', value);
+
     }
+
 </script>
 
 <div class="svelton-rate" on:mouseleave={ ()=> shadow = 0}>
@@ -15,7 +20,7 @@
     <i 
     class={`${ ((shadow==0)? (value>=index+1): (shadow>=index+1)) ? "selected":""}`}
     on:mouseenter = { ()=> shadow = index + 1}
-    on:click={()=>  value = index + 1}>
+    on:click={()=>  change(index + 1)}>
         {@html StarSvg}
     </i>
     {/each}

@@ -37,6 +37,11 @@ export const routes = [
         href: "/checkbox",
         title: "checkbox"
     },
+
+    {
+        href: "/tree",
+        title: "tree"
+    },
     {
         href: "/breadcrumb",
         title: "breadcrumb"
@@ -78,10 +83,6 @@ export const routes = [
     {
         href: "/tag",
         title: "tag"
-    },
-    {
-        href: "/tree",
-        title: "tree"
     },
 
     {
