@@ -34,6 +34,10 @@ export const routes = [
         title: "button"
     },
     {
+        href: "/checkbox",
+        title: "checkbox"
+    },
+    {
         href: "/breadcrumb",
         title: "breadcrumb"
     },
@@ -44,10 +48,6 @@ export const routes = [
     {
         href: "/drawer",
         title: "drawer"
-    },
-    {
-        href: "/checkbox",
-        title: "checkbox"
     },
     {
         href: "/dropdown",
