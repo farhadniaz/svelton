@@ -20,11 +20,13 @@
 }
 	.content-section{
 		display: flex;
+		margin-bottom: 32px;
 		aside {
 			width: 320px;
 		}
 		main {
 			width: 100%;
+			padding: 16px;
 		}
 	}
 

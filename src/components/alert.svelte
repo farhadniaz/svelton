@@ -1,4 +1,8 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+
     import CloseSVG from './icons-svg/outlined/close.svg';
     export let title;
     export let description;
@@ -6,6 +10,10 @@
     export let type = "warning"; // success, info, warning, error
     const typeClassName = `svelton-alert-${type}`;
     $: visible = true;
+    const close = () => {
+        visible = false;
+        dispatch('close');
+    }
 </script>
 
 {#if visible}
@@ -13,7 +21,7 @@
     <span class="svelton-alert-message">{title}</span>
     <span class="svelton-alert-description">{description}</span>
     {#if closeable}
-    <i class="svelton-alert-close" on:click={()=>visible=false}>
+    <i class="svelton-alert-close" on:click={close}>
         {@html CloseSVG}
     </i>
     {/if}

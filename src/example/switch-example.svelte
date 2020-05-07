@@ -19,7 +19,7 @@
         ],
         events: [{
             name: "change",
-            description: "will be triger whenever value changes "
+            description: "will be trigger whenever value changes "
         }],
         methods: []
     }
