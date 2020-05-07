@@ -57,13 +57,17 @@
 
 </script>
 
-<RangeSlider options={slider1Options} />
-<br />
-<RangeSlider options={slider2Op} on:created={oncreated} className="vertical" />
 
-
+<section class="component-card">
+    <h1>Range Slider </h1>
+    <p>some details </p>
+    <RangeSlider options={slider1Options} />
+    <br />
+    <RangeSlider options={slider2Op} on:created={oncreated} className="vertical" />
+</section>
 <style type="text/sass">
     :global(.vertical){
     height: 300px;
+    margin: auto;
 }
 </style>

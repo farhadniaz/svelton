@@ -1,26 +1,28 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
     let switched = false;
     const onClick = () => {
         switched = !switched;
+        dispatch('change', switched);
     }
-
 </script>
-<button type="button" on:click={onClick} role="switch" 
-aria-checked={switched} class={`svelton-switch ${switched?'svelton-switch-checked':""}`}
-    svelton-click-animating={switched}>
+<button type="button" on:click={onClick} role="switch" aria-checked={switched} class={`svelton-switch
+    ${switched?'svelton-switch-checked':""}`} svelton-click-animating={switched}>
     <span class="svelton-switch-inner">
         {#if switched }
         <slot name="checked"/>
         {:else}
         <slot name="unChecked"/>
         {/if}
-
     </span>
     <div class="svelton-click-animating-node"></div>
 </button>
 
 <style>
     .svelton-switch {
+        outline: none;
         margin: 0;
         padding: 0;
         color: rgba(0, 0, 0, .65);
@@ -70,8 +72,8 @@ aria-checked={switched} class={`svelton-switch ${switched?'svelton-switch-checke
         border-radius: inherit;
         -webkit-box-shadow: 0 0 0 0 #1890ff;
         box-shadow: 0 0 0 0 #1890ff;
-        -webkit-box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
-        box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
+        -webkit-box-shadow: 0 0 0 0 var(--svelton-wave-shadow-color);
+        box-shadow: 0 0 0 0 var(--svelton-wave-shadow-color);
         opacity: .2;
         -webkit-animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);
         animation: fadeEffect 2s cubic-bezier(.08, .82, .17, 1), waveEffect .4s cubic-bezier(.08, .82, .17, 1);

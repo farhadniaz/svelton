@@ -28,7 +28,7 @@
     !isPreDefinedColor)?"background-color:"+color:""}`}>
     <slot />
     {#if closable}
-<i class="anticon-close" on:click={close}>{@html CloseSvg}</i>
+<i class="sveltonicon-close" on:click={close}>{@html CloseSvg}</i>
 {/if}
 
 </span>
@@ -58,7 +58,7 @@
         opacity: 1;
         transition: all .3s cubic-bezier(.78,.14,.15,.86);
     }
-.svelton-tag .anticon-close :global(svg){
+.svelton-tag .sveltonicon-close :global(svg){
     display: inline-block;
     font-size: 10px;
     margin-left: 3px;

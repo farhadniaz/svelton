@@ -33,7 +33,7 @@
     }
 </style>
 
-<span class:expanded on:click={toggle}>{@html icon} {name}</span>
+<span class:expanded on:click={toggle}><svelte:component this={icon}/> {name}</span>
 
 {#if expanded}
 	<ul>

@@ -1,7 +1,11 @@
-<header>
-    <h1>svelton</h1>
-</header>
+<script>
+	import page from 'page';
+	const navigate = (path) => { page(path); }
+</script>
 
+<header>
+	<h1 on:click={()=>navigate("/")}>svelton</h1>
+</header>
 
 <style type="text/sass">
 	h1 {

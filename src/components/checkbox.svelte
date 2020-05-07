@@ -115,8 +115,6 @@
         border: 1px solid #1890ff;
         border-radius: 2px;
         visibility: hidden;
-        -webkit-animation: antCheckboxEffect .36s ease-in-out;
-        animation: antCheckboxEffect .36s ease-in-out;
         -webkit-animation-fill-mode: backwards;
         animation-fill-mode: backwards;
         content: '';

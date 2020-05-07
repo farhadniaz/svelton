@@ -14,4 +14,4 @@
 </style>
 
 <span 
->{@html icon} {name}</span>
+><svelte:component this={icon}/> {name}</span>

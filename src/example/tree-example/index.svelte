@@ -1,7 +1,7 @@
 <script>
-	import { Tree } from '../components';
-	import FolderSVG from '../components/icons-svg/outlined/folder.svg';
-	import FileSVG from '../components/icons-svg/outlined/file.svg';
+	import { Tree } from '../../components'; 
+	import FileSVG from './file-svg.svelte'; 
+	import FolderSVG from './folder-svg.svelte'; 
 	let root = [
 		{
 			type: 'root',
@@ -39,4 +39,14 @@
 	];
 </script>
 
-<Tree name="Home" items={root} expanded icon={FolderSVG} leafIcon={FileSVG} />
+
+<section class="component-card">
+	<h1>Tree</h1>
+	<p>some details </p>
+	<Tree 
+	name="Home" items={root} expanded 
+	icon={FolderSVG}  
+	leafIcon={FileSVG} />
+
+
+</section>

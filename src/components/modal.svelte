@@ -276,7 +276,7 @@ on:click|self={close}
 
 
 
-    @keyframes antZoomIn {
+    @keyframes sveltonZoomIn {
         0% {
             transform: scale(0.2);
             opacity: 0;
@@ -303,8 +303,8 @@ on:click|self={close}
 
 
     .svelton-modal__content.zoom-enter-active {
-        -webkit-animation-name: antZoomIn;
-        animation-name: antZoomIn;
+        -webkit-animation-name: sveltonZoomIn;
+        animation-name: sveltonZoomIn;
         -webkit-animation-play-state: running;
         animation-play-state: running;
         opacity: 1;
@@ -313,7 +313,7 @@ on:click|self={close}
 
 
 
-    @keyframes antZoomOut {
+    @keyframes sveltonZoomOut {
   0% {
     transform: scale(1);
   }
@@ -333,7 +333,7 @@ on:click|self={close}
 }
 
 .zoom-leave.zoom-leave-active {
-  animation-name: antZoomOut;
+  animation-name: sveltonZoomOut;
   animation-play-state: running;
   pointer-events: none;
 }
