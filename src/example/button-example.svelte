@@ -1,12 +1,69 @@
 <script>
+    import Highlighter from '../example/sectioner/highlighter.svelte'
+    import Sectioner from './sectioner/index.svelte';
     import { Button } from "../components";
-</script>
-<section class="component-card">
-    <h1>Button </h1>
-    <p>some details </p>
+
+    let usage = `
+    import { Button } from 'svelton';
+    <Button />
+    `;
+
+    let allUsage = `
+    import { Button } from 'svelton';
     <Button type="dashed" />
     <Button type="primary" />
     <Button type="link" />
     <Button danger />
-    <Button />
-</section>
+    `;
+
+
+    let api = {
+        properties: [
+            {
+                name: "type",
+                description: "type of button, values can be, dashed | primary | link | default",
+                type: "string",
+                default: "default"
+            },
+            {
+                name: "danger",
+                description: "set the danger status of button",
+                type: "boolean",
+                default: "false"
+            }
+        ],
+        events: [],
+        methods: []
+    }
+</script>
+
+
+<Sectioner title="Button" api={api}>
+    <span slot="usage">
+        <Highlighter>
+            {usage}
+        </Highlighter>
+    </span>
+    <div slot="examples">
+        <div class="example-item">
+            <Button />
+        </div>
+        <div class="example-item">
+            All types :<br />
+            <Button type="dashed" />
+            <Button type="primary" />
+            <Button type="link" />
+            <Button danger />
+            <Highlighter>
+                {allUsage}
+            </Highlighter>
+        </div>
+    </div>
+
+
+    <Button type="dashed" />
+    <Button type="primary" />
+    <Button type="link" />
+    <Button danger />
+
+</Sectioner>

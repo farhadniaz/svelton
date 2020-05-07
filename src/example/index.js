@@ -26,8 +26,20 @@ export const routes = [
         title: "alert"
     },
     {
+        href: "/radio",
+        title: "radio"
+    },
+    {
+        href: "/button",
+        title: "button"
+    },
+    {
         href: "/breadcrumb",
         title: "breadcrumb"
+    },
+    {
+        href: "/fileupload",
+        title: "fileupload"
     },
     {
         href: "/drawer",
@@ -54,10 +66,7 @@ export const routes = [
         href: "/pagination",
         title: "pagination"
     },
-    {
-        href: "/radio",
-        title: "radio"
-    },
+
     {
         href: "/range-slider",
         title: "range slider"
@@ -74,10 +83,7 @@ export const routes = [
         href: "/tree",
         title: "tree"
     },
-    {
-        href: "/button",
-        title: "button"
-    },
+
     {
         href: "/table",
         title: "table"

@@ -2,12 +2,10 @@
     export let items=[];
     export let seprator="/";
 </script>
-
 <div class="svelton-breadcrumb">
     {#each items as Item, index}
         <span>
             <span class="svelton-breadcrumb-link">
-
         {#if typeof Item =="function" }
             <svelte:component this={Item}/>
         {:else if typeof Item =="object" }

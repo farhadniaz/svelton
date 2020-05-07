@@ -7,6 +7,10 @@
         events: [],
         methods: []
     }
+    $: hasEvents = api.events.length;
+    $: hasProperties = api.properties.length;
+    $: hasMethods = api.methods.length;
+
 </script>
 
 <section class="sectioner">
@@ -20,8 +24,11 @@
     </div>
     <slot name="examples"/>
     <div >
+        
+      {#if (hasMethods || hasProperties || hasEvents) }  
         API: <br/>
-        {#if api.properties.length>0}
+      {/if} 
+        {#if hasProperties}
         properties:
         <table class="sectioner__api-table" >
             <thead>
@@ -43,8 +50,8 @@
                 {/each}
             </tbody>
         </table>
-        {/if}
-        {#if api.events.length>0}
+        {/if} 
+        {#if hasEvents}
         events:
         <table class="sectioner__api-table" >
             <thead>
@@ -63,7 +70,7 @@
             </tbody>
         </table>
         {/if}
-        {#if api.methods.length>0}
+        {#if hasMethods}
         methods:
         {/if}
     </div>
