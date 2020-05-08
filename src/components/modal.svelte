@@ -3,17 +3,20 @@
     import { fade, fly } from 'svelte/transition'
     import Button from "./button.svelte"
     import CloseSVG from './icons-svg/outlined/close.svg';
+    const dispatch = createEventDispatcher();
+
+
+    export let backdropClosable = true;
     export let visible = false
     export let title = "title";
     export let type = "modal"; // confirm
+
     let mode = true;
     let dialogNode;
     let openTime;
     let origineAdded = false;
     let inTransition = false;
     let mousePosition = {};
-
-    const dispatch = createEventDispatcher();
 
     const cancel = () => {
         close();
@@ -93,29 +96,8 @@
 
 
     onMount(() => {
-
-        // if (typeof window !== 'undefined' && window.document && window.document.documentElement) {} 
         window.addEventListener('click', getClickPosition);
-
-
-
-
-        // else if (visible) {
-        // inTransition = true;
-        // if (mask && this.lastOutSideFocusNode && focusTriggerAfterClose) {
-        //     try {
-        //         this.lastOutSideFocusNode.focus();
-        //     } catch (e) {
-        //         this.lastOutSideFocusNode = null;
-        //     }
-        //     this.lastOutSideFocusNode = null;
-        // }
-        // }
-
-
     })
-
-
 
     $: if (visible && dialogNode) {
         // first show
@@ -145,43 +127,25 @@
 {#if visible}
 <div class="svelton-modal " 
 transition:fade
-on:click|self={close}
-
->
+on:click|self={close}>
     <div
- 
-
     class="svelton-modal__content  {mode ?'zoom-enter-active  zoom-enter':'zoom-leave-active  zoom-leave'} ">
         <div class="svelton-modal__content__header">
           <span class="svelton-modal__content__header__title">{title}</span>
             <i class="svelton-modal__content__header__close" on:click={close}>{@html CloseSVG}</i>
         </div>
         <div class="svelton-modal__content__body">
-            body     <br/>
-            dsfds
-            <br/>
-        
-            lastOutSideFocusNodesdf     <br/>
-            solid     <br/>
-            <br/>
-            lastOutSideFocusNodesfd
-            <s>
-                <br/>
-            </s>
+            <slot/>
         </div>
         <div class="svelton-modal__content__footer">
-           
             <Button on:click={ok} type="primary">Ok</Button> 
             <Button on:click={cancel}  danger >Cancel</Button>
-
-    
-
         </div>
     </div>
 </div>
 {/if}
 
-<style>
+<style >
 
 .svelton-modal__content__header {
     display: flex;

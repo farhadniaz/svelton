@@ -2,31 +2,41 @@
     import { fade, fly } from 'svelte/transition'
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
+    import CloseSVG from './icons-svg/outlined/close.svg';
+
     export let placement = "right"; //	The placement of the Drawer.	top | right | bottom | left	 
     export let visible = false;
     export let title = "title";
+    export let backdropClosable = true;
+
     let drawerClientWidth;
     let drawerClientHeight;
     $: transitionFly = { x: drawerClientWidth, duration: 350 };
     // { x: -drawerClientWidth,  duration: 350 }
-    const onClose = () => {
-        visible=false;
+    const close = () => {
+        visible = false;
         dispatch('close', visible);
     }
 
     $: if (visible) {
-        // alert("tie to open");
-
+        dispatch('open', visible);
     } else {
-        // alert("tie to clsoe");
     }
 
+
+    const closeWithBackdrop = () => {
+        debugger;
+        if (backdropClosable) {
+            debugger;
+            close();
+        }
+    }
 </script>
 
 
 {#if visible}
 <div class="svelton-drawer svelton-drawer-{placement}"
-on:click|self={onClose} transition:fade>
+on:click|self={closeWithBackdrop} transition:fade>
 {#if visible}
 
     <div class="svelton-drawer-content-wrapper" 
@@ -36,6 +46,7 @@ on:click|self={onClose} transition:fade>
             <div class="svelton-drawer-wrapper-body">
                 <div class="svelton-drawer-header">
                     <div class="svelton-drawer-title">{title}</div>
+                    <i class="svelton-drawer-header__close" on:click={close}>{@html CloseSVG}</i>
                 </div>
                 <div class="svelton-drawer-body"  bind:clientWidth={drawerClientWidth}
                 bind:clientHeight={drawerClientHeight}>
@@ -68,7 +79,10 @@ on:click|self={onClose} transition:fade>
     opacity: 1;
 }
 
-
+.svelton-drawer-header__close :global(svg){
+    height: 16px;
+    cursor: pointer;
+}
 .svelton-drawer-content {
     position: relative;
     z-index: 1;
@@ -146,6 +160,7 @@ margin-top: 0;
     background: #fff;
     border-bottom: 1px solid #f0f0f0;
     border-radius: 2px 2px 0 0;
+    display: flex;
 }
 .svelton-drawer-title {
     margin: 0;
@@ -153,6 +168,7 @@ margin-top: 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
+    width: 100%;
 }
 
 .svelton-drawer-body {

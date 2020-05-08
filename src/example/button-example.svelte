@@ -15,8 +15,15 @@
     <Button type="link" />
     <Button danger />
     `;
-
-
+    let allUsage2 = `
+    import { Button } from 'svelton';
+    const onClick=()=> alert('clicked');
+    <Button type="dashed" on:click={onClick}>click me</Button>
+    <Button type="primary" on:click={onClick}>click me</Button>
+    <Button type="link" on:click={onClick}>click me</Button>
+    <Button danger on:click={onClick}>click me</Button>
+    `;
+    const onClick = () => alert('clicked');
     let api = {
         properties: [
             {
@@ -58,12 +65,23 @@
                 {allUsage}
             </Highlighter>
         </div>
+
+
+        <div class="example-item">
+            <Button type="dashed" on:click={onClick}>click me</Button>
+            <Button type="primary" on:click={onClick}>click me</Button>
+            <Button type="link" on:click={onClick}>click me</Button>
+            <Button danger on:click={onClick}>click me</Button>
+            <Highlighter>
+                {allUsage2}
+            </Highlighter>
+        </div>
+
+
+
     </div>
 
 
-    <Button type="dashed" />
-    <Button type="primary" />
-    <Button type="link" />
-    <Button danger />
+
 
 </Sectioner>

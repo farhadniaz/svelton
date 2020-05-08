@@ -4,7 +4,9 @@
 
     const dispatch = createEventDispatcher();
     export let closable = false;
+    export let style = "";
     let hidden = false;
+    
     export let color;
     export let className = "";
     let isPreDefinedColor;
@@ -24,8 +26,7 @@
 
 
 <span class={` ${hidden? 'svelton-tag-hidden ' :''} ${className} svelton-tag ${(color &&
-    isPreDefinedColor)?"svelton-tag-"+color:""}`} style={`${(color &&
-    !isPreDefinedColor)?"background-color:"+color:""}`}>
+    isPreDefinedColor)?"svelton-tag-"+color:""}`} style={style}>
     <slot />
     {#if closable}
 <i class="sveltonicon-close" on:click={close}>{@html CloseSvg}</i>
