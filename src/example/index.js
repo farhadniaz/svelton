@@ -46,13 +46,26 @@ export const routes = [
         href: "/breadcrumb",
         title: "breadcrumb"
     },
-    {
-        href: "/fileupload",
-        title: "fileupload"
-    },
+
     {
         href: "/drawer",
         title: "drawer"
+    },
+    {
+        href: "/modal",
+        title: "modal"
+    },
+    {
+        href: "/rate",
+        title: "rate"
+    },
+    {
+        href: "/tag",
+        title: "tag"
+    },
+    {
+        href: "/pagination",
+        title: "pagination"
     },
     {
         href: "/dropdown",
@@ -63,27 +76,18 @@ export const routes = [
         href: "/input",
         title: "input"
     },
+
     {
-        href: "/modal",
-        title: "modal"
+        href: "/fileupload",
+        title: "fileupload"
     },
-    {
-        href: "/pagination",
-        title: "pagination"
-    },
+
 
     {
         href: "/range-slider",
         title: "range slider"
     },
-    {
-        href: "/rate",
-        title: "rate"
-    },
-    {
-        href: "/tag",
-        title: "tag"
-    },
+
 
     {
         href: "/table",

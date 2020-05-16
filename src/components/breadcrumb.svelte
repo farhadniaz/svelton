@@ -1,15 +1,17 @@
 <script>
-    export let items=[];
-    export let seprator="/";
+    export let items = [];
+    export let seprator = "/";
+
+    // {#if typeof Item =="function" }
+    //         <svelte:component this={Item}/> 
 </script>
 <div class="svelton-breadcrumb">
     {#each items as Item, index}
         <span>
             <span class="svelton-breadcrumb-link">
-        {#if typeof Item =="function" }
-            <svelte:component this={Item}/>
-        {:else if typeof Item =="object" }
-        <a href={Item.href}>{Item.title}</a>
+
+        {#if typeof Item =="object" }
+        <a href={Item.href} on:click={Item.onClick} >{Item.title}</a>
         {:else}
             {@html Item}
         {/if}
@@ -22,7 +24,7 @@
 
 </div>
 
-<style>
+<style type="text/sass">
     .svelton-breadcrumb {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -36,5 +38,9 @@
     font-feature-settings: 'tnum';
     color: rgba(0,0,0,.45);
     font-size: 14px;
+    :global(a){
+        text-decoration: none;
+        }
 }
+
 </style>

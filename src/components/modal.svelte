@@ -9,6 +9,9 @@
     export let backdropClosable = true;
     export let visible = false
     export let title = "title";
+    export let cancelText = "Cancel";
+    export let okText = "Ok";
+    
     export let type = "modal"; // confirm
 
     let mode = true;
@@ -37,7 +40,7 @@
             visible = false;
             mode = true;
         }, 100);
-
+        dispatch('close')
     }
 
 
@@ -139,7 +142,7 @@ on:click|self={close}>
         </div>
         <div class="svelton-modal__content__footer">
             <Button on:click={ok} type="primary">Ok</Button> 
-            <Button on:click={cancel}  danger >Cancel</Button>
+            <Button on:click={cancel}  danger >{cancelText}</Button>
         </div>
     </div>
 </div>
