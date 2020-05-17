@@ -1,4 +1,6 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
     import LeftSvg from './icons-svg/outlined/left.svg';
     import RightSvg from './icons-svg/outlined/right.svg';
     import DoubleRightSvg from './icons-svg/outlined/double-right.svg';
@@ -35,6 +37,7 @@
     const setPage = (page) => {
         if (page > 0 && page < pages + 1) {
             currentPage = page;
+            dispatch('change', page);
         }
     }
 
